@@ -24,7 +24,6 @@ module.exports = async (client, discord, member) => {
   //& REGISTRAR USUARIO
 
   //%CANVAS
-
   const canvas = createCanvas(1920, 1080); //Tamaño de nuestra imagen
   const ctx = canvas.getContext("2d");
 
