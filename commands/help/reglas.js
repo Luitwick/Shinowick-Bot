@@ -14,17 +14,17 @@ module.exports = {
         .setStyle("DANGER");
       //! BUTTONS
   
-      //* FILA
+      //& FILA
   
       const fila = new discord.MessageActionRow().addComponents(btn1, btn2);
   
-      //* FILA
+      //& FILA
   
       //! MENSAJES
   
       const msgE = {
         title: "Reglas",
-        description: "Estas son las reglas de tu canal",
+        description: "Estas son las reglas de tu canal \ Estas serian las siguientes mencionadas",
         color: 65535,
         author: {
           name: "El admin mas sabroso",
