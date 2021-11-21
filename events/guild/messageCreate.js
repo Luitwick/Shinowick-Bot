@@ -1,16 +1,17 @@
 require("dotenv").config();
 const prefix = process.env.PREFIX;
 
-//& MODELOS
+//* MODELOS
 const userModel = require("../../models/userSchema");
-//& MODELOS
+//* MODELOS
 
 module.exports = async (client, discord, message) => {
   if (message.author.bot) return;
 
   //& REGISTRAR USUARIO
+  let userData;
   try {
-    let userData = await userModel.findOne({ userID: message.author.id });
+    userData = await userModel.findOne({ userID: message.author.id });
     if (!userData) {
       let user = await userModel.create({
         userID: message.author.id,
@@ -18,16 +19,17 @@ module.exports = async (client, discord, message) => {
         serverID: message.guild.id,
       });
       user.save();
-      console.log("Usuario Registrado");
+    } else {
+      console.log("usuario ya registrado");
     }
   } catch (error) {
     console.log(error);
   }
+
   //& REGISTRAR USUARIO
 
-  if (!message.content.startsWith(prefix))
-    return message.reply("Esto no es un comando");
-
+  if (!message.content.startsWith(prefix)) return;
+  
   const args = message.content.slice(prefix.length).split(/ +/);
   const cmd = args.shift().toLowerCase();
 

@@ -23,11 +23,9 @@ mongoose
     console.log(e);
   });
 
-
 //! Mongo
 
 //! CODIGO
-
 client.commands = new discord.Collection();
 client.events = new discord.Collection();
 
