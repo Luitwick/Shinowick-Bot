@@ -5,7 +5,7 @@ const client = new discord.Client({
   intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"],
 });
 
-//! Mongo
+//% Mongo
 
 const mongoose = require("mongoose");
 const mg = process.env.DB
@@ -23,7 +23,7 @@ mongoose
     console.log(e);
   });
 
-//! Mongo
+//% Mongo
 
 //! CODIGO
 client.commands = new discord.Collection();
@@ -35,5 +35,3 @@ client.events = new discord.Collection();
 //!------
 
 client.login(process.env.DSTOKEN);
-
-

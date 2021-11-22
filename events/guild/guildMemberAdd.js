@@ -34,15 +34,15 @@ module.exports = async (client, discord, member) => {
   ctx.strokeStyle = "#000000";
   ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-  const name = member.user.username;
+  const name = member.displayName;
 
   if (name.length >= 16) {
     ctx.font = "bold 100px Sans";
-    ctx.fillStyle = "#5E1C91";
+    ctx.fillStyle = "#FF9B00";
     ctx.fillText(name, canvas.width / 2, canvas.height / 2 + 100);
   } else {
     ctx.font = "bold 130px Sans";
-    ctx.fillStyle = "#5E1C91";
+    ctx.fillStyle = "#FF9B00";
     ctx.fillText(name, canvas.width / 2, canvas.height / 2 + 100);
   }
 
@@ -80,14 +80,14 @@ module.exports = async (client, discord, member) => {
   const reglas = member.guild.channels.cache.find(
     (channel) => channel.id === "907114193570918481"
   );
-  
-    const me = new discord.MessageEmbed()
-      .setColor("RED")
-      .setTitle("Bienvenido/a")
-      .setDescription(`Lee las reglas en ${reglas}`)
-      .setImage("attachment://img.png")
-      .setTimestamp()
-      .setFooter(member.guild.name,);
-  
-    channel.send({ embeds: [me], files: [imagen] }); 
+
+  const me = new discord.MessageEmbed()
+    .setColor("RED")
+    .setTitle("Bienvendia")
+    .setDescription(`Lee las reglas en ${reglas}`)
+    .setImage("attachment://img.png")
+    .setTimestamp()
+    .setFooter(member.guild.name);
+
+  channel.send({ embeds: [me], files: [imagen] });
 };
